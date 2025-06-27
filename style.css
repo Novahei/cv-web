@@ -1,97 +1,43 @@
 body {
   font-family: 'Noto Sans JP', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background-color: #1C3879; /* rouge japonais */
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+body {
+  font-family: 'Noto Sans JP', sans-serif;
   margin: 0;
   background-color: #faf8f5;
   color: #2d2d2d;
-  font-family: 'Noto Sans JP', sans-serif;
-  margin: 0;
-  background-image: url("https://www.transparenttextures.com/patterns/wavecut.png");
-  background-color: #f0f4f8;
-  background-repeat: repeat;
-  background-attachment: fixed;
-  color: #1a1a1a;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("https://i.imgur.com/NCuU6I1.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 500px;
-  opacity: 0.04;
-  z-index: -1;
-}
-
-body {
-  background-image: url("https://i.imgur.com/NCuU6I1.png"); /* Seigaiha bleu clair */
-  background-repeat: repeat;
-  background-size: 300px;
-  background-color: #f8f8f8;
 }
 
 header {
-  display: flex;
-  align-items: flex-start;
-  background-color: #1C3879;
+  background-color: #1C3879; /* Rouge japonais */
   color: white;
-  padding: 20px;
-  gap: 20px;
-}
-
-header {
-  display: flex;
-  align-items: center;
-  background-color: #1C3879;
-  color: white;
-  padding: 20px;
-  gap: 20px;
-}
-
-.header-content {
-  flex: 1;
+  padding: 30px;
   text-align: center;
 }
 
-.header-content h1 {
-  margin: 0 0 5px 0;
-  font-size: 1.8em;
+section {
+  padding: 20px;
+  margin: 20px;
+  background-color: #ffffff;
+  border-left: 5px solid #1C3879;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-
-.header-content p {
-  margin: 0;
-  font-size: 1em;
-}
-
-.photo-id-img {
-  width: 80px;
-  height: 100px;
-  object-fit: cover;
-  border: 2px solid white;
-  border-radius: 4px;
-}
-
-.header-content h1 {
-  margin: 0 0 5px 0;
-  font-size: 1.8em;
-}
-
-.header-content p {
-  margin: 0;
-  font-size: 1em;
-}
-
 header .banniere {
-  background-color: #1C3879; /* Bleu traditionnel japonais */
+  background-color: #1C3879; /* rouge japonais */
   color: white;
   text-align: center;
   padding: 20px;
   position: relative;
-  
 }
 
 header .banniere img {
@@ -110,13 +56,102 @@ header .banniere p {
   position: relative;
   z-index: 1;
 }
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  margin: 0;
+  background-color: #fdfdfb;
+  color: #2d2d2d;
+}
 
-section {
+/* NAVIGATION */
+nav {
+  background-color: #1C3879;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+nav ul {
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+nav ul li {
+  margin: 0 15px;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* HEADER */
+header {
+  margin-top: 60px; /* espace pour le menu fixe */
+}
+.banniere {
+  background-color: #1C3879;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  position: relative;
+}
+.banniere img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0.1;
+  z-index: 0;
+}
+.banniere h1,
+.banniere p,
+.banniere .photo {
+  position: relative;
+  z-index: 1;
+}
+.photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid white;
+  margin-bottom: 10px;
+}
+
+/* SECTIONS */
+main {
   padding: 20px;
-  margin: 20px;
-  background-color: #ffffff;
+}
+section {
+  background-color: white;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 800px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
   border-left: 5px solid #1C3879;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+section h2 {
+  margin-top: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  .photo {
+    width: 90px;
+    height: 90px;
+  }
 }
 @media (max-width: 768px) {
   nav ul {
@@ -125,18 +160,10 @@ section {
     padding: 10px 0;
   }
 
- .photo {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid white;
-  margin-top: 10px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
+  .photo {
+    width: 90px;
+    height: 90px;
+  }
 
   section {
     margin: 10px;
@@ -160,7 +187,10 @@ main, section {
   max-width: 800px;
   margin: auto;
 }
-
+ul.competences {
+  list-style: none;
+  padding-left: 0;
+}
 ul.competences li {
   margin-bottom: 10px;
   font-size: 1.1em;
@@ -193,7 +223,52 @@ section {
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
+body { background: #fdfdfb !important; }
+body {
+  font-family: sans-serif;
+  background-color: #fdfdfb;
+  color: #2d2d2d;
+  margin: 0;
+  padding: 0;
+}
 
+header {
+  text-align: center;
+  background-color: #1C3879;
+  color: white;
+  padding: 20px;
+}
+
+.photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  margin-top: 10px;
+}
+
+section {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: white;
+  border-left: 5px solid #1C3879;
+  border-radius: 10px;
+}
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  margin: 0;
+  background-image: url(image/fond.png);
+  background-color: #f0f4f8;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  color: #1a1a1a;
+}
+ul.competences li i {
+  color: #1C3879;
+  margin-right: 8px;
+}
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -208,7 +283,6 @@ section {
 section {
   animation: fadeInUp 0.6s ease both;
 }
-
 nav ul li a {
   color: white;
   text-decoration: none;
@@ -219,17 +293,15 @@ nav ul li a {
 nav ul li a:hover {
   color: #A3D5FF; /* bleu clair au survol */
 }
-
 section:hover {
   transform: scale(1.01);
   transition: transform 0.2s ease;
 }
-
 .top-button {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #1C3879;
+  background-color: #A3D5FF;
   color: white;
   font-size: 20px;
   padding: 10px 14px;
@@ -241,5 +313,161 @@ section:hover {
 }
 .top-button:hover {
   opacity: 1;
+}
+.photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid white;
+  margin-top: 10px;
+}
+.photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid white;
+  margin-top: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.photo {
+  max-width: 120px;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  border: 4px solid white;
+  display: block;
+  margin: 10px auto;
+  object-fit: cover;
+}
+header {
+  display: flex;
+  align-items: flex-start;
+  background-color:#1C3879;
+  color: white;
+  padding: 20px;
+  gap: 20px;
+}
+
+.photo-id-img {
+  width: 80px;
+  height: 100px;
+  object-fit: cover;
+  border: 2px solid white;
+  border-radius: 4px;
+}
+
+.header-content h1 {
+  margin: 0 0 5px 0;
+  font-size: 1.8em;
+}
+
+.header-content p {
+  margin: 0;
+  font-size: 1em;
+}
+header {
+  display: flex;
+  align-items: flex-start;
+  background-color: #1C3879;
+  color: white;
+  padding: 20px;
+  gap: 20px;
+}
+
+.photo-id-img {
+  width: 80px;
+  height: 100px;
+  object-fit: cover;
+  border: 2px solid white;
+  border-radius: 4px;
+}
+
+.header-content h1 {
+  margin: 0 0 5px 0;
+  font-size: 1.8em;
+}
+
+.header-content p {
+  margin: 0;
+  font-size: 1em;
+}
+header {
+  display: flex;
+  align-items: flex-start;
+  background-color: #1C3879;
+  color: white;
+  padding: 20px;
+  gap: 20px;
+}
+
+.photo-id-img {
+  width: 80px;
+  height: 100px;
+  object-fit: cover;
+  border: 2px solid white;
+  border-radius: 4px;
+}
+
+.header-content h1 {
+  margin: 0 0 5px 0;
+  font-size: 1.8em;
+}
+
+.header-content p {
+  margin: 0;
+  font-size: 1em;
+}
+header {
+  display: flex;
+  align-items: center;
+  background-color: #1C3879;
+  color: white;
+  padding: 20px;
+  gap: 20px;
+}
+
+.header-content {
+  flex: 1;
+  text-align: center;
+}
+
+.header-content h1 {
+  margin: 0 0 5px 0;
+  font-size: 1.8em;
+}
+
+.header-content p {
+  margin: 0;
+  font-size: 1em;
+}
+body {
+  background-color: #f8f8f8;
+  background-image: url("image/fond.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1200px;
+  background-attachment: fixed;
+}
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("image/fond.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1200px;
+  opacity: 0.04;
+  z-index: -1;
+  pointer-events: none;
+}
+
+body {
+  position: relative;
+  z-index: 0;
+  background-color: #f8f8f8;
 }
 
